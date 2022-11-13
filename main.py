@@ -37,8 +37,8 @@ def create_app():
                 name="Mohg",
                 classe="clerigo",
                 hp="100",
-                forca="40",
                 lv="20",
+                forca="40",
                 destreza="50",
                 password="123456"
             ))
