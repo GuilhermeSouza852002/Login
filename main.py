@@ -16,9 +16,6 @@ def create_app():
     from index.routes import index_blueprint
     application.register_blueprint(index_blueprint)
 
-    from character.routes import character_blueprint
-    application.register_blueprint(character_blueprint)
-
     from login.routes import login_blueprint
     application.register_blueprint(login_blueprint)
 
@@ -37,8 +34,8 @@ def create_app():
                 name="Mohg",
                 classe="clerigo",
                 hp="100",
-                lv="20",
                 forca="40",
+                lv="20",
                 destreza="50",
                 password="123456"
             ))

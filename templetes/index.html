@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rick and Morty Web App</title>
+</head>
+<body>
+
+<header>
+    <menu>
+    {% if current_user.is_authenticated %}
+
+        <item>
+            <a href="./character/">Personagens</a>
+        </item>
+        <item>Locais</item>
+        <item>Episódios</item>
+        <item><a href="{{ url_for('login_blueprint.logout') }}">Logout</a></item>
+
+    {% else %}
+        <item>
+            <item><a href="{{ url_for('login_blueprint.register') }}">Cadastre-se</a></item>
+        </item>
+        <item>
+            <a href="./login">Login</a>
+        </item>
+    {% endif %}
+    </menu>
+
+</header>
+
+<div>
+
+    <h1>Rick and Morty Web App</h1>
+
+    <p>Bem vindo ao projeto didático para desenvolvimento
+        de aplicações web utilizando o framework flask junto
+        a ferramento ORM SQLAlchemy.
+    </p>
+
+</div>
+
+
+<footer>
+    <p>{{ now }}</p>
+</footer>
+
+</body>
+</html>

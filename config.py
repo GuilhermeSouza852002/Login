@@ -17,7 +17,7 @@ class DevelopmentConfig(Config):
     TESTING = DEBUG = True
 
     # DATABASE_URI = "sqlite:///:memory:"
-    DATABASE_URI = "mysql+mysqlconnector://aluno:aluno123@localhost/RICK_AND_MORTY"
+    DATABASE_URI = "mysql+mysqlconnector://root:123456@localhost/RICK_AND_MORTY"
 
     SQLALCHEMY_DATABASE_URI = DATABASE_URI
 

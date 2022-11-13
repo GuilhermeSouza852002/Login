@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+</head>
+<body>
+
+<form method="POST" action="{{ url_for('login_blueprint.register') }}">
+    {{ form.hidden_tag() }}
+    <div>
+        {{ form.name.label }} {{ form.name() }}
+    </div>
+    <div>
+        {{ form.classe.label }} {{ form.classe() }}
+    </div>
+    <div>
+        {{ form.hp.label }} {{ form.hp() }}
+    </div>
+    <div>
+        {{ form.lv.label }} {{ form.lv() }}
+    </div>
+    <div>
+        {{ form.forca.label }} {{ form.forca() }}
+    </div>
+    <div>
+        {{ form.destreza.label }} {{ form.destreza() }}
+    </div>
+    <div>
+        {{ form.password.label }} {{ form.password() }}
+    </div>
+    <div>
+        {{ form.confirm.label }} {{ form.confirm() }}
+    </div>
+    <div>
+        {{ form.submit() }}
+    </div>
+
+
+</form>
+
+</body>
+</html>

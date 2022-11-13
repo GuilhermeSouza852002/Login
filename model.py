@@ -33,16 +33,17 @@ class Personagem(db.Model, UserMixin):
         hash.update(str(password).encode())
         return hash.hexdigest() == self.password
 
-# class Character(db.Model):
-# id = db.Column(db.Integer, primary_key=True)
 
-# name = db.Column(db.String(30), nullable=False)
+class Character(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
 
-# created = db.Column(db.String(25), nullable=False,
-# default=str(datetime.utcnow()))
+    name = db.Column(db.String(30), nullable=False)
 
-# gender = db.Column(db.String(10), nullable=True)
+    created = db.Column(db.String(25), nullable=False,
+                        default=str(datetime.utcnow()))
 
-# status = db.Column(db.String(10), nullable=True)
+    gender = db.Column(db.String(10), nullable=True)
 
-# species = db.Column(db.String(20), nullable=True)
+    status = db.Column(db.String(10), nullable=True)
+
+    species = db.Column(db.String(20), nullable=True)
