@@ -1,8 +1,10 @@
-flask
+flask~=2.2.2
 flask_login
 flask_sqlalchemy
 flask_wtf
 
 mysql-connector
 
-requests
+requests~=2.28.1
+WTForms~=3.0.1
+SQLAlchemy~=1.4.44

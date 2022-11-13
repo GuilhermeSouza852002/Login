@@ -13,8 +13,8 @@ def login():
     login_form = LoginForm()
 
     if login_form.validate_on_submit():
-        email = str(login_form.email.data)
-        user = User.query.filter_by(email=email).first()
+        name = str(login_form.name.data)
+        user = User.query.filter_by(name=name).first()
         if user is not None:
             if user.verify_password(login_form.password.data):
                 login_user(user)

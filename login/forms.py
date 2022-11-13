@@ -20,5 +20,4 @@ class RegisterForm(FlaskForm):
         DataRequired(),
         EqualTo("confirm", message="Senhas devem ser compatíveis")])
     confirm = PasswordField("Confirmação")
-    birthdate = DateField("Data de aniversário", validators=[DataRequired()], format=["%d/%m/%Y", "%Y-%m-%d"])
     submit = SubmitField("Cadastrar")
