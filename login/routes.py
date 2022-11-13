@@ -5,7 +5,7 @@ from sqlalchemy.exc import IntegrityError
 from main import db
 from . import login_blueprint
 from .forms import LoginForm, RegisterForm
-from model import Personagem
+from model import User
 
 
 @login_blueprint.route("/login", methods=["GET", "POST"])
@@ -13,11 +13,11 @@ def login():
     login_form = LoginForm()
 
     if login_form.validate_on_submit():
-        name = str(login_form.name.data)
-        personagem = Personagem.query.filter_by(name=name).first()
-        if personagem is not None:
-            if personagem.verify_password(login_form.password.data):
-                login_user(personagem)
+        email = str(login_form.email.data)
+        user = User.query.filter_by(email=email).first()
+        if user is not None:
+            if user.verify_password(login_form.password.data):
+                login_user(user)
                 return redirect(url_for("index_blueprint.index"))
 
         return "Usuário ou senha inválidos", 200
@@ -34,13 +34,14 @@ def logout():
 
 @login_blueprint.route("/register", methods=["GET", "POST"])
 def register():
+
     register_form = RegisterForm()
 
     if register_form.validate_on_submit():
 
         try:
 
-            personagem = Personagem(
+            user = User(
                 name=register_form.name.data,
                 classe=register_form.classe.data,
                 hp=register_form.hp.data,
@@ -49,7 +50,7 @@ def register():
                 destreza=register_form.destreza.data,
                 password=register_form.password.data)
 
-            db.session.add(personagem)
+            db.session.add(user)
 
             db.session.commit()
 

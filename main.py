@@ -16,6 +16,9 @@ def create_app():
     from index.routes import index_blueprint
     application.register_blueprint(index_blueprint)
 
+    from character.routes import character_blueprint
+    application.register_blueprint(character_blueprint)
+
     from login.routes import login_blueprint
     application.register_blueprint(login_blueprint)
 
@@ -30,7 +33,7 @@ def create_app():
             from util.crawler import get_data_from_rick_and_morty_apis
             get_data_from_rick_and_morty_apis(db)
 
-            db.session.add(Personagem(
+            db.session.add(User(
                 name="Mohg",
                 classe="clerigo",
                 hp="100",
