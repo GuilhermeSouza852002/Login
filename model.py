@@ -7,12 +7,12 @@ from datetime import datetime
 
 
 class Personagem(db.Model, UserMixin):
-    name = db.Column(db.String(120), nullable=False)
+    name = db.Column(db.String(120), nullable=False, primary_key=True)
     classe = db.Column(db.String(120), nullable=False)
     hp = db.Column(db.String(120), nullable=False)
     lv = db.Column(db.String(120), nullable=False)
-    forca = db.Column(db.String(120), nullable=False, primary_key=True)
-    destreza = db.Column(db.String(120), nullable=False, primary_key=True)
+    forca = db.Column(db.String(120), nullable=False)
+    destreza = db.Column(db.String(120), nullable=False)
     _password = db.Column(db.String(64), nullable=False)
 
     def get_id(self):

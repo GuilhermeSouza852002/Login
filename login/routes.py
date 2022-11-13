@@ -34,7 +34,6 @@ def logout():
 
 @login_blueprint.route("/register", methods=["GET", "POST"])
 def register():
-
     register_form = RegisterForm()
 
     if register_form.validate_on_submit():
@@ -47,7 +46,7 @@ def register():
                 hp=register_form.hp.data,
                 lv=register_form.lv.data,
                 forca=register_form.forca.data,
-                destreza=register_form.destreza.data,
+                destreza=register_form.destreza,
                 password=register_form.password.data)
 
             db.session.add(personagem)
