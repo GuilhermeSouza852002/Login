@@ -46,7 +46,7 @@ def register():
                 hp=register_form.hp.data,
                 lv=register_form.lv.data,
                 forca=register_form.forca.data,
-                destreza=register_form.destreza,
+                destreza=register_form.destreza.data,
                 password=register_form.password.data)
 
             db.session.add(personagem)
