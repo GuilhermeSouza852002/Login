@@ -33,7 +33,7 @@ def create_app():
             from util.crawler import get_data_from_rick_and_morty_apis
             get_data_from_rick_and_morty_apis(db)
 
-            db.session.add(User(
+            db.session.add(Personagem(
                 name="Mohg",
                 classe="clerigo",
                 hp="100",

@@ -6,7 +6,7 @@ from main import db
 from datetime import datetime
 
 
-class User(db.Model, UserMixin):
+class Personagem(db.Model, UserMixin):
     name = db.Column(db.String(120), nullable=False, primary_key=True)
     classe = db.Column(db.String(120), nullable=False)
     hp = db.Column(db.String(120), nullable=False)
